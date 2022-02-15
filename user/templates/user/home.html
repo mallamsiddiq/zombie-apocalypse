@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width= , initial-scale=1.0">
+  <title>a comprehensive of robots</title>
+  <style>
+table {
+  border-spacing: 2px;
+  width: 90%;
+  border: 1px solid #ddd;
+}
+table {
+  border-spacing: 30px;
+}
+
+th,td {
+  text-align: center;
+  padding: 16px;
+}
+th {
+  background-color: rgb(123,123,137);
+  font-weight: 900;font-size: 1.2em;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(23,123,137);
+}
+tr:nth-child(odd) {
+  background-color: rgb(123,123,37);
+}
+h3{font-weight: 700; text-align: center;font-size: 2em}
+</style>
+</head>
+<body>
+  
+  <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;"><br> <br>  
+    <h3>  A COMPREHENSIVE LIST OF ALL ROBOTS </h3>
+    <table> 
+      <tr> 
+        <th> Model</th>  
+        <th> SerialNumber</th>  
+        <th> ManufacturedDate</th>  
+        <th> Category</th>  
+      </tr>
+      {% for robot in robots %}
+      <tr>  
+        <td> {{robot.model }}</td>
+        <td> {{robot.serialNumber }}</td>
+        <td> {{robot.manufacturedDate }}</td>
+        <td> {{robot.category }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  </div>
+  
+</body>
+</html>
