@@ -13,7 +13,7 @@ run the following :
 //to build the image web the run
 
 
-** docker-compose up 
+**docker-compose up 
 
 
 and boom!! your app is running on port :8000 
@@ -26,13 +26,15 @@ but if you still wish to continue with the conventional local running, follow th
 With python and pip installed on your machine run the following commands:
 
 
-run pip install -r requirements.txt
+run:
 
-python manage.py migrate
+**pip install -r requirements.txt
 
-python manage.py runserver
+**python manage.py migrate
 
-NAVIGATION AND TESTING
+**python manage.py runserver
+
+# NAVIGATION AND TESTING
 
 i build the app running locally on port:: HTTP://127.0.0.1:8000/API/SURVIVORS   with recommedations well observed  from the test document.
 
@@ -42,7 +44,11 @@ to discriminate infected from those not infected i created another column ‘ is
 
 Also check the API http://127.0.0.1:8000/api/survivors?is_infected=true ton check all infected and http://127.0.0.1:8000/api/survivors?is_infected=false for those not . I’ve also built custom filter with the API to you’ll see the the filter icon to the top right conner of the general list api HTTP://127.0.0.1:8000/API/SURVIVORS click to filter base on your preference 
 
-limitations: 
+  
+  
+# Limitations:
+
+  
 
 1. the provided api to get robots from changes every seconds and i don't really get which you'd prefer saving the robots data to database or consuming directly from the API in any case i consume directly from the api and leave the code to save it to database in the views.py file as a commented block.
 2. the recommendation limits to authentication so some intuitive functionalitis might not be in this app yet. 
