@@ -1,6 +1,6 @@
-DOCUMENTATION ON THE API
+# DOCUMENTATION ON THE API
 
-RUNNING
+# RUNNING
 
 With django and pip installed on your machine run the following commands:
 
@@ -20,3 +20,11 @@ on the api that lists all survivors infected or not, scroll to bottom to create 
 to discriminate infected from those not infected i created another column ‘ is_invented ’ i made it a boolean field than automatically turns true when 3 survivors flag a user as infected. This field uses another field to count and track amount of flagging. This can be achieved by checking the boolean field  on the detail page. I c0onnected to the CPU And download then display robots’ registry in a more readable manner on http://127.0.0.1:8000/robots/ . the last endpoint is the statistical analysis of the survivors, check the end point  :: http://127.0.0.1:8000/survivorstats/  to view percentage infected number remains and all.
 
 Also check the API http://127.0.0.1:8000/api/survivors?is_infected=true ton check all infected and http://127.0.0.1:8000/api/survivors?is_infected=false for those not . I’ve also built custom filter with the API to you’ll see the the filter icon to the top right conner of the general list api HTTP://127.0.0.1:8000/API/SURVIVORS click to filter base on your preference 
+
+limitations: 
+
+1. the provided api to get robots from changes every seconds and i don't really get which you'd prefer saving the robots data to database or consuming directly from the API in any case i consume directly from the api and leave the code to save it to database in the views.py file as a commented block.
+2. the recommendation limits to authentication so some intuitive functionalitis might not be in this app yet. 
+
+
+thanks SODIQ

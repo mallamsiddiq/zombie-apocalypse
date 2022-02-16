@@ -97,7 +97,7 @@ def statview(request):
 def robotsview(request):
 	api_robots=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
 	
-	robots= api_robots
+	robots= api_robots		# Robots.objects.all()
 	return render(request, 'user/home.html', {'robots':robots})
 
 
