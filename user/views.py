@@ -95,7 +95,28 @@ def statview(request):
 
 
 def robotsview(request):
-	robots= Robots.objects.all()
+	api_robots=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
+	
+	robots= api_robots		# Robots.objects.all()
 	return render(request, 'user/home.html', {'robots':robots})
 
-#
+
+
+# api_robots=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
+	
+# for i in (api_robots):
+
+	
+# 	if len(Robots.objects.filter(serialNumber=i['serialNumber']))<1:
+# 		try:
+# 			robots_inst=Robots(model=i['model'],serialNumber=i['serialNumber'],manufacturedDate=i['manufacturedDate'],category=i['category'])
+# 			robots_inst.save()
+# 			print('this robot {} is beign registered'.format(i['serialNumber']))
+# 		except Exception as e:
+# 			print(e)
+# 	else:
+# 		print('this robot {} is already registered'.format(i['serialNumber']))
+
+# Robots.objects.all().delete()
+
+
