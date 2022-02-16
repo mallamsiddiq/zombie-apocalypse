@@ -2,7 +2,7 @@
 
 # RUNNING
 
-To solve the issue of dependecies i've provided a containaerise solution. so if you have docker intalled on your machine it's an easier story go about
+To solve the issue of likely clashing dependecies, i've provided a containaerise solution. so if you have docker intalled on your machine it's an easier story go about
 
 
 run the following :
