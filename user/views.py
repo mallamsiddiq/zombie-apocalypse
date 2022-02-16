@@ -98,20 +98,4 @@ def robotsview(request):
 	robots= Robots.objects.all()
 	return render(request, 'user/home.html', {'robots':robots})
 
-
-d=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
-# # print(json.dumps(d))
-for i in (d):
-	try:
-		robots_inst=Robots(model=i['model'],serialNumber=i['serialNumber'],manufacturedDate=i['manufacturedDate'],category=i['category'])
-		robots_inst.save()
-	except Exception as e:
-		print(e)
-	
 #
-print(Robots.objects.all())
-# # model":"CXNCB","serialNumber":"2JNBS3JACJH0QBK","manufacturedDate":"2022-02-25T19:25:39.8638814+00:00","category":"Land"},
-
-
-
-

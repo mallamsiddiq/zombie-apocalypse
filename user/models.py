@@ -34,7 +34,7 @@ class Survivor(models.Model):
 
 
 
-CATEGORY_CHOICES = [('Flying', 'Flying'), ('Land', 'Land')]
+CATEGORY_CHOICES = [('Flying', 'Land'), ('Land', 'Land')]
 class Robots(models.Model):
 	model=models.CharField(max_length=200)
 	serialNumber=models.CharField(unique=True, max_length=200)
@@ -51,8 +51,8 @@ class SurvivorStatistics:
     	self.total_survivors=infected_survivors+non_infected_survivors
     	self.number_infected=infected_survivors
     	self.number_non_infected=non_infected_survivors
-    	self.perc_infected = infected_survivors/(self.total_survivors)
-    	self.perc_non_infected = non_infected_survivors/self.total_survivors
+    	self.perc_infected = infected_survivors/(self.total_survivors) if self.total_survivors>0 else 0
+    	self.perc_non_infected = non_infected_survivors/self.total_survivors  if self.total_survivors>0 else 0
 
         
 
