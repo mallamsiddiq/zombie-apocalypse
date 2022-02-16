@@ -2,7 +2,28 @@
 
 # RUNNING
 
-With django and pip installed on your machine run the following commands:
+To solve the issue of dependecies i've provided a containaerise solution. so if you have docker intalled on your machine it's an easier story go about
+
+
+run the following :
+
+
+**docker-compose build 
+
+//to build the image web the run
+
+
+** docker-compose up 
+
+
+and boom!! your app is running on port :8000 
+
+but if you still wish to continue with the conventional local running, follow the instructions bellow:
+
+
+
+
+With python and pip installed on your machine run the following commands:
 
 
 run pip install -r requirements.txt
