@@ -1,14 +1,18 @@
 DOCUMENTATION ON THE API
+
 RUNNING
 
 With django and pip installed on your machine run the following commands:
 
 
 run pip install -r requirements.txt
+
 python manage.py migrate
+
 python manage.py runserver
 
 NAVIGATION AND TESTING
+
 i build the app running locally on port:: HTTP://127.0.0.1:8000/API/SURVIVORS   with recommedations well observed  from the test document.
 
 on the api that lists all survivors infected or not, scroll to bottom to create a survivor with the fields :name, age, gender, id and last location required while inventories are optional, i made the inventories level floating numbers that reperesent what percentage over 100 of a particular inventory the survivor has. a survivor can update is location and also inventories on the on survivors details api  HTTP://127.0.0.1:8000/API/<USERNAME>/ 

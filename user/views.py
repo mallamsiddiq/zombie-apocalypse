@@ -95,28 +95,28 @@ def statview(request):
 
 
 def robotsview(request):
-	robots= Robots.objects.all()
+	api_robots=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
+	
+	robots= api_robots		# Robots.objects.all()
 	return render(request, 'user/home.html', {'robots':robots})
 
 
-Robots.objects.all().delete()
-api_robots=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
-for i in (api_robots):
-	if len(Robots.objects.filter(serialNumber=i['serialNumber']))<1:
-		try:
-			robots_inst=Robots(model=i['model'],serialNumber=i['serialNumber'],manufacturedDate=i['manufacturedDate'],category=i['category'])
-			robots_inst.save()
-			print('this robot {} is beign registered'.format(i['serialNumber']))
-		except Exception as e:
-			print(e)
-	else:
-		print('this robot {} is already registered'.format(i['serialNumber']))
+
+# api_robots=requests.get('https://robotstakeover20210903110417.azurewebsites.net/robotcpu').json()
 	
-# # Robots.objects.all().delete()
-# print(Robots.objects.all().count())
-# print(len(Robots.objects.filter(serialNumber='ZRTIA7UQSY7AW4F')))
-# # model":"CXNCB","serialNumber":"2JNBS3JACJH0QBK","manufacturedDate":"2022-02-25T19:25:39.8638814+00:00","category":"Land"},
+# for i in (api_robots):
 
+	
+# 	if len(Robots.objects.filter(serialNumber=i['serialNumber']))<1:
+# 		try:
+# 			robots_inst=Robots(model=i['model'],serialNumber=i['serialNumber'],manufacturedDate=i['manufacturedDate'],category=i['category'])
+# 			robots_inst.save()
+# 			print('this robot {} is beign registered'.format(i['serialNumber']))
+# 		except Exception as e:
+# 			print(e)
+# 	else:
+# 		print('this robot {} is already registered'.format(i['serialNumber']))
 
+# Robots.objects.all().delete()
 
 
