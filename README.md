@@ -2,7 +2,7 @@
 
 # RUNNING
 
-To solve the issue of likely clashing dependecies, i've provided a containaerise solution. so if you have docker intalled on your machine it's an easier story to go about
+To solve the issue of likely clashing dependecies, i've provided a containaerise solution. so if you have docker and docker compose intalled on your machine it's an easier story to go about
 
 
 run the following :
@@ -10,7 +10,7 @@ run the following :
 
 **docker-compose build 
 
-//to build the image web the run
+//to build the image web then run
 
 
 **docker-compose up 
