@@ -1,6 +1,39 @@
 # DOCUMENTATION ON THE API
+### the ZOMBIE APOCALYPSE 2090 MODEL
 
-# RUNNING
+### Over view
+
+The year is 2090 and the world as we know it has been taken over by robots. Created as once friendly robots, have now turned against humankind, especially software engineers like yourself. Their mission is to transform everyone into mindless zombies for their entertainment. You as a resistance member (and the last survivor who knows how to code), i designated to develop a system to meet the following requirements
+
+Add survivors to the database
+
+A survivor has an inventory of resources (which you need to declare upon the registration of the survivor). This can include Water, Food, Medication and Ammunition.
+
+Update survivor location
+
+A survivor have the ability to update their last location, storing the new latitude/longitude pair in the base (no need to track locations, just replacing the previous one is enough).
+
+Flag survivor as infected
+
+In a chaotic situation like this, it's inevitable that a survivor may get transformed into a zombie. When this happens, we need to flag the survivor as infected.
+A survivor is marked as infected when at least three other survivors report their contamination.
+
+Connect to the Robot CPU system
+
+Connect to the robot CPU system to get a list of all robots and their known locations. Robots have two categories (Flying robots and land robots). I sort this information in a meaningful and intuitive way for humans to understand and process. I use this link to get the list of robots
+https://robotstakeover20210903110417.azurewebsites.net/robotcpu
+
+Reports
+
+The API also provide the following information:
+• Percentage of infected survivors.
+• Percentage of non-infected survivors.
+• List of infected survivors
+• List of non-infected survivors
+• List of robots
+
+
+## RUNNING
 
 To solve the issue of likely clashing dependecies, i've provided a containaerise solution. so if you have docker and docker compose intalled on your machine it's an easier story to go about
 
@@ -8,12 +41,12 @@ To solve the issue of likely clashing dependecies, i've provided a containaerise
 run the following :
 
 
-**docker-compose build 
+	docker-compose build 
 
 //to build the image web then run
 
 
-**docker-compose up 
+	docker-compose up 
 
 
 and boom!! your app is running on port :8000 
@@ -28,11 +61,11 @@ With python and pip installed on your machine run the following commands:
 
 run:
 
-**pip install -r requirements.txt
+	pip install -r requirements.txt
 
-**python manage.py migrate
+	python manage.py migrate
 
-**python manage.py runserver
+	python manage.py runserver
 
 # NAVIGATION AND TESTING
 
@@ -50,8 +83,9 @@ Also check the API http://127.0.0.1:8000/api/survivors?is_infected=true ton chec
 
   
 
-1. the provided api to get robots from changes every seconds and i don't really get which you'd prefer saving the robots data to database or consuming directly from the API in any case i consume directly from the api and leave the code to save it to database in the views.py file as a commented block.
-2. the recommendation limits to authentication so some intuitive functionalitis might not be in this app yet. 
+1. the recommendation limits to authentication so some intuitive functionalitis might not be in this app yet. 
 
 
-thanks SODIQ
+thanks 
+
+SODIQ
